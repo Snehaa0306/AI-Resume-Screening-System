@@ -1,0 +1,1066 @@
+/* =========================================================
+   CREATE JOB PAGE
+   Dashboard / Jobs matched UI
+   Fully independent from Dashboard.css
+========================================================= */
+
+.create-job-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+
+  background: #f4f7fc;
+  color: #0e1a2f;
+
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+
+  box-sizing: border-box;
+}
+
+.create-job-page *,
+.create-job-page *::before,
+.create-job-page *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.create-job-sidebar {
+  width: 218px;
+  height: 100vh;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  background: #101b30;
+  color: #ffffff;
+
+  padding: 22px 13px;
+
+  display: flex;
+  flex-direction: column;
+
+  z-index: 100;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.create-job-logo {
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 12px;
+
+  margin-bottom: 18px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  letter-spacing: -0.2px;
+}
+
+.create-job-logo span {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #2753e6;
+
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 800;
+
+  box-shadow: 0 5px 14px rgba(39, 83, 230, 0.25);
+}
+
+
+/* =========================================================
+   SIDEBAR MENU
+========================================================= */
+
+.create-job-menu {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.create-job-sidebar-link {
+  height: 41px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 12px;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  color: #b8c4d8;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.create-job-sidebar-link span {
+  width: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #aebbd0;
+
+  font-size: 18px;
+  line-height: 1;
+}
+
+.create-job-sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.07);
+
+  color: #ffffff;
+}
+
+.create-job-sidebar-link:hover span {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   ACTIVE SIDEBAR LINK
+========================================================= */
+
+.create-job-sidebar-link.active {
+  background: #2753e6;
+
+  color: #ffffff;
+
+  box-shadow: 0 4px 12px rgba(39, 83, 230, 0.18);
+}
+
+.create-job-sidebar-link.active span {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.create-job-sidebar-bottom {
+  margin-top: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  padding-top: 18px;
+}
+
+.create-job-logout:hover {
+  background: rgba(220, 38, 38, 0.12);
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.create-job-main {
+  min-height: 100vh;
+
+  margin-left: 218px;
+
+  width: calc(100% - 218px);
+
+  padding: 27px 32px 30px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.create-job-header {
+  width: 100%;
+
+  margin-bottom: 20px;
+}
+
+.create-job-back {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: #2753e6;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.create-job-back:hover {
+  color: #1d43bd;
+
+  text-decoration: underline;
+}
+
+.create-job-small-text {
+  margin: 0 0 4px;
+
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.create-job-header h1 {
+  margin: 0;
+
+  color: #0e1a2f;
+
+  font-size: 24px;
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+.create-job-subtitle {
+  margin: 6px 0 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.create-job-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e7f0;
+
+  border-radius: 11px;
+
+  padding: 20px 22px;
+
+  box-shadow: 0 2px 8px rgba(14, 26, 47, 0.025);
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.create-job-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid #e1e7f0;
+
+  margin-bottom: 20px;
+}
+
+.create-job-card-header h2 {
+  margin: 0;
+
+  color: #0e1a2f;
+
+  font-size: 15px;
+  line-height: 1.3;
+
+  font-weight: 800;
+}
+
+.create-job-card-header p {
+  margin: 4px 0 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.create-job-form {
+  width: 100%;
+}
+
+.create-job-field {
+  margin-bottom: 17px;
+}
+
+.create-job-field label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #0e1a2f;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.create-job-field label span {
+  color: #dc2626;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.create-job-field input,
+.create-job-field textarea {
+  width: 100%;
+
+  border: 1px solid #e1e7f0;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #0e1a2f;
+
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.create-job-field input {
+  height: 41px;
+
+  padding: 0 12px;
+}
+
+.create-job-field textarea {
+  min-height: 135px;
+
+  padding: 11px 12px;
+
+  resize: vertical;
+
+  line-height: 1.5;
+}
+
+.create-job-field input::placeholder,
+.create-job-field textarea::placeholder {
+  color: #94a3b8;
+}
+
+.create-job-field input:hover,
+.create-job-field textarea:hover {
+  border-color: #cbd5e1;
+}
+
+.create-job-field input:focus,
+.create-job-field textarea:focus {
+  border-color: #2753e6;
+
+  box-shadow:
+    0 0 0 3px rgba(39, 83, 230, 0.08);
+}
+
+
+/* =========================================================
+   TWO COLUMN ROW
+========================================================= */
+
+.create-job-row {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   CUSTOM DROPDOWN
+========================================================= */
+
+.create-job-custom-dropdown {
+  position: relative;
+
+  width: 100%;
+}
+
+.create-job-dropdown-trigger {
+  width: 100%;
+  height: 41px;
+
+  padding: 0 12px;
+
+  border: 1px solid #e1e7f0;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #0e1a2f;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.create-job-dropdown-trigger:hover {
+  border-color: #cbd5e1;
+}
+
+.create-job-dropdown-trigger.open {
+  border-color: #2753e6;
+
+  border-radius: 8px 8px 0 0;
+
+  box-shadow:
+    0 0 0 3px rgba(39, 83, 230, 0.08);
+}
+
+.create-job-dropdown-trigger .placeholder {
+  color: #94a3b8;
+}
+
+.create-job-dropdown-trigger .selected {
+  color: #0e1a2f;
+}
+
+.create-job-dropdown-arrow {
+  color: #64748b;
+
+  font-size: 8px;
+
+  margin-left: 10px;
+}
+
+
+/* =========================================================
+   DROPDOWN MENU
+========================================================= */
+
+.create-job-dropdown-menu {
+  position: absolute;
+
+  top: calc(100% - 1px);
+
+  left: 0;
+  right: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #2753e6;
+
+  border-top: none;
+
+  border-radius: 0 0 8px 8px;
+
+  box-shadow:
+    0 8px 20px rgba(14, 26, 47, 0.08);
+
+  z-index: 100;
+
+  overflow: hidden;
+}
+
+.create-job-dropdown-options {
+  max-height: 220px;
+
+  overflow-y: auto;
+}
+
+.create-job-dropdown-options::-webkit-scrollbar {
+  width: 5px;
+}
+
+.create-job-dropdown-options::-webkit-scrollbar-track {
+  background: #f4f7fc;
+}
+
+.create-job-dropdown-options::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+
+  border-radius: 10px;
+}
+
+.create-job-dropdown-item {
+  width: 100%;
+
+  min-height: 38px;
+
+  padding: 0 12px;
+
+  border: none;
+
+  background: #ffffff;
+
+  color: #0e1a2f;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: 0.15s ease;
+}
+
+.create-job-dropdown-item:hover {
+  background: #f4f7fc;
+}
+
+.create-job-dropdown-item.selected-item {
+  background: #eef3ff;
+
+  color: #2753e6;
+
+  font-weight: 700;
+}
+
+.create-job-check {
+  font-size: 13px;
+
+  font-weight: 700;
+
+  color: #2753e6;
+}
+
+
+/* =========================================================
+   ADD NEW OPTION
+========================================================= */
+
+.create-job-add-new {
+  width: 100%;
+
+  min-height: 41px;
+
+  padding: 0 12px;
+
+  border: none;
+
+  border-top: 1px solid #e1e7f0;
+
+  background: #fafcff;
+
+  color: #2753e6;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.create-job-add-new:hover {
+  background: #eef3ff;
+}
+
+.create-job-add-new span {
+  font-size: 16px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   ADD NEW INPUT
+========================================================= */
+
+.create-job-add-container {
+  padding: 10px;
+
+  border-top: 1px solid #e1e7f0;
+
+  background: #fafcff;
+}
+
+.create-job-add-container input {
+  width: 100%;
+
+  height: 35px;
+
+  padding: 0 10px;
+
+  border: 1px solid #e1e7f0;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #0e1a2f;
+
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+
+  outline: none;
+}
+
+.create-job-add-container input:focus {
+  border-color: #2753e6;
+
+  box-shadow:
+    0 0 0 2px rgba(39, 83, 230, 0.07);
+}
+
+.create-job-add-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 7px;
+
+  margin-top: 8px;
+}
+
+.create-job-add-cancel,
+.create-job-add-confirm {
+  height: 30px;
+
+  padding: 0 12px;
+
+  border-radius: 7px;
+
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.create-job-add-cancel {
+  border: 1px solid #e1e7f0;
+
+  background: #ffffff;
+
+  color: #64748b;
+}
+
+.create-job-add-cancel:hover {
+  background: #f4f7fc;
+}
+
+.create-job-add-confirm {
+  border: none;
+
+  background: #0e1a2f;
+
+  color: #ffffff;
+}
+
+.create-job-add-confirm:hover {
+  background: #17243d;
+}
+
+
+/* =========================================================
+   HELPER TEXT
+========================================================= */
+
+.create-job-helper {
+  margin: 5px 0 0;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   ERROR / SUCCESS
+========================================================= */
+
+.create-job-error {
+  margin: 4px 0 17px;
+
+  padding: 9px 11px;
+
+  border-radius: 8px;
+
+  background: #fff5f5;
+
+  border: 1px solid #ffd9d9;
+
+  color: #c62828;
+
+  font-size: 11px;
+}
+
+.create-job-success {
+  margin: 4px 0 17px;
+
+  padding: 9px 11px;
+
+  border-radius: 8px;
+
+  background: #f0fbf5;
+
+  border: 1px solid #d5f0df;
+
+  color: #15965a;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.create-job-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding-top: 4px;
+}
+
+.create-job-cancel {
+  height: 39px;
+
+  padding: 0 18px;
+
+  border-radius: 8px;
+
+  border: 1px solid #e1e7f0;
+
+  background: #ffffff;
+
+  color: #64748b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  transition: 0.2s ease;
+}
+
+.create-job-cancel:hover {
+  background: #f4f7fc;
+
+  border-color: #cbd5e1;
+
+  color: #0e1a2f;
+}
+
+.create-job-submit {
+  height: 39px;
+
+  padding: 0 21px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #2753e6;
+
+  color: #ffffff;
+
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.create-job-submit:hover {
+  background: #1f46c9;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RESPONSIVE - LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .create-job-main {
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+  .create-job-sidebar {
+    width: 76px;
+    min-width: 76px;
+
+    padding: 20px 9px;
+  }
+
+  .create-job-logo {
+    justify-content: center;
+
+    padding: 0;
+
+    font-size: 0;
+  }
+
+  .create-job-logo span {
+    width: 38px;
+    height: 38px;
+
+    font-size: 20px;
+  }
+
+  .create-job-sidebar-link {
+    justify-content: center;
+
+    padding: 0;
+
+    gap: 0;
+
+    font-size: 0;
+  }
+
+  .create-job-sidebar-link span {
+    width: auto;
+
+    font-size: 19px;
+  }
+
+  .create-job-main {
+    margin-left: 76px;
+
+    width: calc(100% - 76px);
+
+    padding: 24px 20px 30px;
+  }
+
+  .create-job-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .create-job-sidebar {
+    width: 62px;
+    min-width: 62px;
+
+    padding: 15px 7px;
+  }
+
+  .create-job-logo {
+    margin-bottom: 17px;
+  }
+
+  .create-job-logo span {
+    width: 36px;
+    height: 36px;
+
+    font-size: 19px;
+  }
+
+  .create-job-sidebar-link {
+    height: 41px;
+  }
+
+  .create-job-main {
+    margin-left: 62px;
+
+    width: calc(100% - 62px);
+
+    padding: 20px 14px;
+  }
+
+  .create-job-header {
+    margin-bottom: 17px;
+  }
+
+  .create-job-small-text {
+    font-size: 10px;
+  }
+
+  .create-job-header h1 {
+    font-size: 21px;
+  }
+
+  .create-job-subtitle {
+    font-size: 11px;
+  }
+
+  .create-job-card {
+    padding: 17px 15px;
+  }
+
+  .create-job-card-header {
+    margin-bottom: 17px;
+  }
+
+  .create-job-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .create-job-field {
+    margin-bottom: 16px;
+  }
+
+  .create-job-actions {
+    flex-direction: column-reverse;
+
+    align-items: stretch;
+  }
+
+  .create-job-cancel,
+  .create-job-submit {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL SCREEN
+========================================================= */
+
+@media (max-width: 380px) {
+  .create-job-sidebar {
+    width: 55px;
+    min-width: 55px;
+  }
+
+  .create-job-main {
+    margin-left: 55px;
+
+    width: calc(100% - 55px);
+
+    padding: 15px 10px;
+  }
+
+  .create-job-header h1 {
+    font-size: 19px;
+  }
+
+  .create-job-logo span {
+    width: 34px;
+    height: 34px;
+
+    font-size: 18px;
+  }
+
+  .create-job-card {
+    padding: 15px 12px;
+  }
+}

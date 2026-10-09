@@ -1,0 +1,548 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+.signin-page {
+  --bg: #f4f7fc;
+  --ink: #0e1a2f;
+  --mute: #64748b;
+  --line: #e1e7f0;
+  --brand: #2753e6;
+  --navy: #101b30;
+
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Manrope", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.signin-page *,
+.signin-page *::before,
+.signin-page *::after {
+  box-sizing: border-box;
+}
+
+/* Split layout */
+.signin-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Left navy panel */
+.signin-side-panel {
+  min-height: 100vh;
+  padding: 38px 7.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--navy);
+  color: #fff;
+}
+
+/* Logo */
+.signin-logo {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 10px;
+  color: #fff;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+
+.signin-logo-box {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* Left content */
+.signin-side-content {
+  width: 100%;
+  max-width: 480px;
+  margin: 25px 0;
+}
+
+.signin-side-content h2 {
+  margin: 0 0 26px;
+  color: #f5f7ff;
+  font-size: clamp(27px, 2.5vw, 36px);
+  font-weight: 800;
+  line-height: 1.23;
+  letter-spacing: -1.1px;
+}
+
+/* Candidate cards */
+.signin-candidate-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.signin-candidate {
+  width: 100%;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 13px 17px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 13px;
+  background: #202d43;
+  color: #fff;
+}
+
+.signin-candidate div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.signin-candidate strong {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.signin-candidate span {
+  color: #aab5c7;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.signin-candidate b {
+  color: #4ce49b;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* Left footer */
+.signin-side-footer {
+  margin: 20px 0 0;
+  color: #a5b0c3;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Right form panel */
+.signin-form-panel {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 7%;
+  background: var(--bg);
+}
+
+.signin-form-container {
+  width: 100%;
+  max-width: 510px;
+  margin: 0 auto;
+}
+
+/* Heading */
+.signin-heading {
+  margin-bottom: 27px;
+}
+
+.signin-heading h1 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: clamp(27px, 2.5vw, 35px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1.1px;
+}
+
+.signin-heading p {
+  margin: 0;
+  color: var(--mute);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Form */
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.signin-field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.signin-field label {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Forgot password */
+.signin-options {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -8px;
+}
+
+.signin-options a {
+  color: var(--brand);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.signin-options a:hover {
+  text-decoration: underline;
+}
+
+/* Inputs */
+.signin-field input {
+  width: 100%;
+  height: 54px;
+  padding: 0 15px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  outline: none;
+  background: #fff;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.signin-field input::placeholder {
+  color: #929db0;
+  opacity: 1;
+}
+
+.signin-field input:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(39, 83, 230, 0.1);
+}
+
+/* Error and success */
+.signin-error,
+.signin-success {
+  margin: -3px 0 0;
+  padding: 10px 12px;
+  border-radius: 9px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.signin-error {
+  background: #fff0ef;
+  color: #c62828;
+}
+
+.signin-success {
+  background: #eaf8ef;
+  color: #16803c;
+}
+
+/* Sign In button */
+.signin-btn {
+  width: 100%;
+  min-height: 55px;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 12px;
+  background: var(--brand);
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.signin-btn:hover {
+  background: #1d43c6;
+  transform: translateY(-1px);
+}
+
+.signin-btn:active {
+  transform: translateY(0);
+}
+
+.signin-btn:focus-visible {
+  outline: 3px solid rgba(39, 83, 230, 0.3);
+  outline-offset: 3px;
+}
+
+/* Create account link */
+.signin-signup {
+  margin: 22px 0 0;
+  color: var(--mute);
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.signin-signup a {
+  color: var(--brand);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.signin-signup a:hover {
+  text-decoration: underline;
+}
+
+/* Back to home */
+.signin-back {
+  display: block;
+  width: fit-content;
+  margin: 20px auto 0;
+  color: #52627c;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.signin-back:hover {
+  color: var(--brand);
+}
+
+/* Short desktop screens */
+@media (min-width: 761px) and (max-height: 760px) {
+  .signin-side-panel {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+
+  .signin-form-panel {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .signin-heading {
+    margin-bottom: 20px;
+  }
+
+  .signin-form {
+    gap: 13px;
+  }
+
+  .signin-field input {
+    height: 48px;
+  }
+
+  .signin-btn {
+    min-height: 49px;
+  }
+
+  .signin-signup {
+    margin-top: 16px;
+  }
+
+  .signin-back {
+    margin-top: 13px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1050px) {
+  .signin-side-panel {
+    padding: 32px 6%;
+  }
+
+  .signin-form-panel {
+    padding: 30px 5%;
+  }
+
+  .signin-side-content h2 {
+    font-size: 29px;
+  }
+
+  .signin-heading h1 {
+    font-size: 30px;
+  }
+
+  .signin-heading p {
+    font-size: 14px;
+  }
+
+  .signin-field input {
+    height: 50px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+}
+
+/* Small tablet and mobile */
+@media (max-width: 760px) {
+  .signin-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .signin-side-panel {
+    min-height: auto;
+    padding: 25px 7%;
+    gap: 26px;
+  }
+
+  .signin-logo {
+    font-size: 20px;
+  }
+
+  .signin-logo-box {
+    width: 38px;
+    height: 38px;
+  }
+
+  .signin-side-content {
+    max-width: none;
+    margin: 0;
+  }
+
+  .signin-side-content h2 {
+    margin-bottom: 19px;
+    font-size: 28px;
+  }
+
+  .signin-candidate-list {
+    gap: 9px;
+  }
+
+  .signin-candidate {
+    min-height: 48px;
+    padding: 11px 14px;
+    border-radius: 11px;
+  }
+
+  .signin-side-footer {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  .signin-form-panel {
+    min-height: auto;
+    padding: 38px 7%;
+  }
+
+  .signin-form-container {
+    max-width: 510px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .signin-side-panel {
+    padding: 22px;
+    gap: 22px;
+  }
+
+  .signin-side-content h2 {
+    font-size: 25px;
+    letter-spacing: -0.7px;
+  }
+
+  .signin-form-panel {
+    padding: 32px 22px 38px;
+  }
+
+  .signin-heading {
+    margin-bottom: 23px;
+  }
+
+  .signin-heading h1 {
+    font-size: 27px;
+    letter-spacing: -0.8px;
+  }
+
+  .signin-heading p {
+    font-size: 13px;
+  }
+
+  .signin-form {
+    gap: 17px;
+  }
+
+  .signin-field {
+    gap: 7px;
+  }
+
+  .signin-field label {
+    font-size: 13px;
+  }
+
+  .signin-field input {
+    height: 50px;
+    border-radius: 10px;
+    font-size: 13px;
+  }
+
+  .signin-btn {
+    min-height: 51px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+
+  .signin-signup {
+    margin-top: 19px;
+    font-size: 13px;
+  }
+
+  .signin-back {
+    margin-top: 17px;
+    font-size: 12px;
+  }
+}
+/* Password label and forgot password link */
+.signin-password-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.signin-password-label label {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.signin-password-label a {
+  color: var(--brand);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.signin-password-label a:hover {
+  text-decoration: underline;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .signin-page *,
+  .signin-page *::before,
+  .signin-page *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
